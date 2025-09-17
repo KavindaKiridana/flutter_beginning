@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart';
+import 'package:flutter5/notifier.dart';
+import 'package:flutter5/profile.dart';
+import 'package:flutter5/about.dart';
+import 'package:flutter5/top_a_bar.dart';
+
+List<Widget> pages = [About(), Profile()];
+
+class WidgetTree extends StatelessWidget {
+  const WidgetTree({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return ValueListenableBuilder<int>(
+      valueListenable: selectedBarNo,
+      builder: (context, value, child) {
+        return Scaffold(
+          appBar: TopABar(),
+          body: pages.elementAt(value),
+          bottomNavigationBar: NavigationBar(
+            destinations: const [
+              NavigationDestination(
+                icon: Icon(Icons.settings),
+                label: 'settings',
+              ),
+              NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
+            ],
+            onDestinationSelected: (int num) {
+              selectedBarNo.value = num;
+            },
+            selectedIndex: value,
+          ),
+        );
+      },
+    );
+  }
+}
