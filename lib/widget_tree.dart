@@ -20,8 +20,8 @@ class WidgetTree extends StatelessWidget {
           bottomNavigationBar: NavigationBar(
             destinations: const [
               NavigationDestination(
-                icon: Icon(Icons.settings),
-                label: 'settings',
+                icon: Icon(Icons.contact_page),
+                label: 'about',
               ),
               NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
             ],

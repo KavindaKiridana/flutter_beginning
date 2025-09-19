@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter5/notifier.dart';
-import 'package:flutter5/widget_tree.dart';
+import 'package:flutter5/welcome_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             brightness: boolvalue ? Brightness.dark : Brightness.light,
           ),
-          home: WidgetTree(),
+          home: WelcomePage(),
         );
       },
     );
