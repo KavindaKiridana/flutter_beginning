@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter5/internet_page.dart';
 import 'package:flutter5/notifier.dart';
 import 'package:flutter5/profile.dart';
 import 'package:flutter5/about.dart';
 import 'package:flutter5/top_a_bar.dart';
 
-List<Widget> pages = [About(), Profile()];
+List<Widget> pages = [About(), Profile(), InternetPage()];
 
 class WidgetTree extends StatelessWidget {
   const WidgetTree({super.key});
@@ -24,6 +25,10 @@ class WidgetTree extends StatelessWidget {
                 label: 'about',
               ),
               NavigationDestination(icon: Icon(Icons.person), label: 'profile'),
+              NavigationDestination(
+                icon: Icon(Icons.integration_instructions_rounded),
+                label: 'internet',
+              ),
             ],
             onDestinationSelected: (int num) {
               selectedBarNo.value = num;
