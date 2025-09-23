@@ -1,5 +1,4 @@
 import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'dart:convert' as convert;
 import 'package:http/http.dart' as http;
@@ -19,15 +18,15 @@ class _InternetPageState extends State<InternetPage> {
   }
 
   void getData() async {
-    var url = Uri.https('v2.jokeapi.dev', '/joke/Any');
+    var url = Uri.https('jsonplaceholder.typicode.com', '/todos/1');
 
     var response = await http.get(url);
     if (response.statusCode == 200) {
       var jsonResponse =
           convert.jsonDecode(response.body) as Map<String, dynamic>;
-      var itemCount = jsonResponse['delivery'];
+      var itemCount = jsonResponse['title'];
       print('internet page');
-      log('Number of books about http: $itemCount.');
+      log(itemCount);
       log(response.body);
     } else {
       log('Request failed with status: ${response.statusCode}.');
