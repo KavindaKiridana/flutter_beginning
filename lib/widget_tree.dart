@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter5/comming_from_internet.dart';
+import 'package:flutter5/joke_page.dart';
 import 'package:flutter5/internet_page.dart';
 import 'package:flutter5/notifier.dart';
 import 'package:flutter5/profile.dart';
@@ -36,8 +36,8 @@ class WidgetTree extends StatelessWidget {
                 label: 'internet',
               ),
               NavigationDestination(
-                icon: Icon(Icons.signal_wifi_connected_no_internet_4),
-                label: 'internet',
+                icon: Icon(Icons.smart_toy_outlined),
+                label: 'joke',
               ),
             ],
             onDestinationSelected: (int num) {
